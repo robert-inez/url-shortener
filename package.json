@@ -1,0 +1,8 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:robert-inez/url-shortener.git",
+  "author": "rinez <rinez_71@proton.me>",
+  "license": "Apache-2.0"
+}
