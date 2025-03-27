@@ -4,5 +4,26 @@
   "main": "index.js",
   "repository": "git@github.com:robert-inez/url-shortener.git",
   "author": "rinez <rinez_71@proton.me>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "nodemon --watch \"*.ts\" --exec \"ts-node\" ./src/server.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.13",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "eslint": "^9.23.0",
+    "globals": "^16.0.0",
+    "nodemon": "^3.1.9",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.28.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ts-node": "^10.9.2"
+  }
 }
