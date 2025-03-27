@@ -1,13 +1,8 @@
-import bodyParser from 'body-parser';
-import express from 'express';
+import { App } from './app';
+import { AliveCheckRoute } from './routes/aliveCheck.route';
 
-const app = express();
+export const app = new App([
+    new AliveCheckRoute(),
+]);
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-const PORT: string | number = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-    console.log(`server is running on ${PORT}`);
-});
+app.listener();

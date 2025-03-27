@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:13
+    container_name: url_shortener_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: rinez
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: url-shortener
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/url_shortener
+    volumes:
+      - .:/usr/src/app
+    command: npm run dev
+
+volumes:
+  postgres_data:
